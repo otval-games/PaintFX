@@ -1,7 +1,6 @@
 package com.example.paintfx.Controllers;
 
-import com.example.paintfx.Modules.DrawModule;
-import javafx.event.ActionEvent;
+import com.example.paintfx.Modules.Module;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.canvas.Canvas;
@@ -32,15 +31,15 @@ public class Controller  implements Initializable {
 
     private GraphicsContext g;
 
-    private final DrawModule drawModule = new DrawModule();
+    private final Module module = new Module(this);
 
 //Functions
     public void onPickerHandled() {
-        drawModule.setColor(colorPicker.getValue());
+        module.setColor(colorPicker.getValue());
     }
 
     public void onMouseDragged(MouseEvent mouseEvent) {
-        drawModule.drawRect(g, mouseEvent.getX(), mouseEvent.getY());
+        module.drawRect(g, mouseEvent.getX(), mouseEvent.getY());
     }
 
     @Override
@@ -50,13 +49,10 @@ public class Controller  implements Initializable {
     }
 
     public void onSaved() {
-        drawModule.save();
+        module.onSaveClicked();
     }
 
     public void onUploaded() {
-        drawModule.upload();
-    }
-
-    public void onMouseDragEnded(MouseEvent mouseEvent) {
+        module.onUploadClicked();
     }
 }
