@@ -3,14 +3,13 @@ package com.example.paintfx.Modules;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
-import java.io.IOException;
 import java.util.ArrayList;
 
 public class DrawModule {
 
     private Color color;
 
-    private ArrayList<Rect> rectList = new ArrayList<>();
+    private final ArrayList<Rect> rectList = new ArrayList<>();
 
     public void drawRect(GraphicsContext g, double x, double y) {
         g.setFill(color);
@@ -26,10 +25,6 @@ public class DrawModule {
 
     public void upload() {
         GSONModule.upload();
-    }
-
-    public Color getColor() {
-        return color;
     }
 
     public void setColor(Color color) {

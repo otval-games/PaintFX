@@ -11,7 +11,6 @@ import javafx.scene.control.ColorPicker;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -33,10 +32,10 @@ public class Controller  implements Initializable {
 
     private GraphicsContext g;
 
-    private DrawModule drawModule = new DrawModule();
+    private final DrawModule drawModule = new DrawModule();
 
 //Functions
-    public void onPickerHandled(ActionEvent actionEvent) {
+    public void onPickerHandled() {
         drawModule.setColor(colorPicker.getValue());
     }
 
@@ -50,11 +49,11 @@ public class Controller  implements Initializable {
         g.setFill(Color.WHITE);
     }
 
-    public void onSaved(ActionEvent actionEvent) {
+    public void onSaved() {
         drawModule.save();
     }
 
-    public void onUploaded(ActionEvent actionEvent) {
+    public void onUploaded() {
         drawModule.upload();
     }
 
