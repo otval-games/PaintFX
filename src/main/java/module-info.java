@@ -4,6 +4,7 @@ module com.example.paintfx {
 
     requires com.dlsc.formsfx;
     requires com.google.gson;
+    opens com.example.paintfx.Modules;
 
     opens com.example.paintfx to javafx.fxml;
     exports com.example.paintfx;

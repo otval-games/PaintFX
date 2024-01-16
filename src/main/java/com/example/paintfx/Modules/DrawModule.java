@@ -1,9 +1,9 @@
 package com.example.paintfx.Modules;
 
-import com.example.paintfx.JSON.JSONWorker;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class DrawModule {
@@ -16,10 +16,16 @@ public class DrawModule {
         g.setFill(color);
         g.fillRect(x, y, 5, 5);
 
-        Rect newRect = new Rect(color, x, y);
+        Rect newRect = new Rect(x, y);
         rectList.add(newRect);
+    }
 
-        JSONWorker.toJSON(newRect);
+    public void save(){
+        GSONModule.save(rectList);
+    }
+
+    public void upload() {
+        GSONModule.upload();
     }
 
     public Color getColor() {
