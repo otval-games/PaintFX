@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.paintfx.Controllers.Controller">
+   <children>
+      <SplitPane dividerPositions="0.031527890056588515" orientation="VERTICAL" prefHeight="991.0" prefWidth="1000.0">
+        <items>
+            <HBox>
+               <children>
+                  <ColorPicker fx:id="colorPicker" onAction="#onPickerHandled" prefHeight="28.0" prefWidth="140.0" />
+                  <Button fx:id="BtnSave" mnemonicParsing="false" onAction="#onSaved" prefHeight="38.0" prefWidth="61.0" text="Save" />
+                  <Button fx:id="BtnUpload" mnemonicParsing="false" onAction="#onUploaded" prefHeight="38.0" prefWidth="66.0" text="Upload" />
+               </children>
+            </HBox>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <Canvas fx:id="canvas" height="196.0" layoutY="4.0" onMouseDragged="#onMouseDragged" onMouseReleased="#onMouseDragEnded" width="600.0" />
+               </children></AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
